@@ -37,7 +37,6 @@ An episode in the environment concludes when:
 ## Results
 ![Reward Mean](images/reward_mean.PNG)
 
-## Results
 
 The training progression, as illustrated by the mean episode rewards graph, shows an upward trend in the agent's performance, indicating successful learning. The graph displays the agent's average rewards per episode over the training iterations. After an initial rapid improvement, the reward growth steadies, suggesting the agent is refining its trading strategy.
 
