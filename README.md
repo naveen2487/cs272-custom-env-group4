@@ -1,9 +1,9 @@
 
 # Stock Trading Reinforcement Learning Module
 ## Project Summary
-<!--This project aims to develop a Reinforcement Learning module for stock trading simulation. The `StockTradingEnv` environment simulates a stock market where an agent can buy, sell, or hold stocks based on historical stock data. This module is beneficial for researchers and enthusiasts who want to experiment with RL in financial markets. The learning results will showcase how the agent learns to make trading decisions to maximize its net worth over time.-->
 
-This project aims to address the complex challenge of decision-making in stock trading using Reinforcement Learning (RL). This RL module simulates a stock trading environment where an AI agent learns to buy, sell, or hold stocks based on historical data, aiming to maximize its financial gains. Targeted users include financial analysts, trading enthusiasts, and AI researchers, who are interested in exploring the application of RL in financial markets. The project's core is the `StockTradingEnv`, a custom Gymnasium environment that mirrors real-world stock market scenarios, providing a robust platform for experimenting and learning. The outcome of this project is a trained RL agent capable of making informed trading decisions, which is demonstrated through its performance over time in various market conditions.
+This project focuses on applying Reinforcement Learning (RL) to simulate and optimize stock trading strategies. Using the `StockTradingEnv`, a custom Gymnasium environment, we simulate a stock market where an AI agent learns to make trading decisions based on historical stock data. The goal is to maximize financial returns through strategic buying, selling, and holding of stocks. This module is primarily intended for financial analysts, trading enthusiasts, and AI researchers who are keen on exploring the intersection of machine learning and financial markets. The project's outcome is an RL agent trained using Proximal Policy Optimization (PPO) algorithm, demonstrating its capability to adapt and make informed decisions in a simulated stock market environment.
+
 
 ## State Space
 The state space in `StockTradingEnv` is a comprehensive representation of the stock market, including:
@@ -16,10 +16,9 @@ The action space of the environment is a 2D continuous space:
 - Action Type: Represented by a continuous value where 0 indicates 'Buy', 1 indicates 'Sell', and values in between imply a 'Hold' strategy.
 - Action Amount: A continuous value representing the percentage of the agent's balance to be used for buying or the proportion of held shares to be sold.
 
+
 ## Rewards
-The reward strategy is designed to encourage profitable trades:
-- The primary reward signal is the change in the agent's net worth, computed as the current balance plus the market value of held shares.
-- A positive reward is given for an increase in net worth, incentivizing the agent to maximize returns.
+The reward is calculated as the change in net worth, providing an incentive for the agent to increase its financial value. This is based on the balance and the market value of the held stocks. A time factor is also incorporated, scaling the reward over the simulation period.
 
 ## RL Algorithm 
 This project utilizes the Proximal Policy Optimization (PPO) algorithm, a popular choice in RL for its balance between sample efficiency and ease of tuning. PPO's robustness makes it suitable for the complexities of the stock market environment.
@@ -37,3 +36,12 @@ An episode in the environment concludes when:
 
 ## Results
 ![Reward Mean](images/reward_mean.PNG)
+
+## Results
+
+The training progression, as illustrated by the mean episode rewards graph, shows an upward trend in the agent's performance, indicating successful learning. The graph displays the agent's average rewards per episode over the training iterations. After an initial rapid improvement, the reward growth steadies, suggesting the agent is refining its trading strategy.
+
+A smoothing of the reward curve and a decrease in variability toward the end of training imply that the agent's policy is converging on a stable solution. This performance indicates that our RL model, using the PPO algorithm within the `StockTradingEnv`, is capable of developing effective stock trading strategies.
+
+Future efforts could aim to enhance agent performance by experimenting with various state representations and reward structures.
+
