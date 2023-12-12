@@ -36,3 +36,4 @@ An episode in the environment concludes when:
 - This allows the agent to experience a full cycle of market conditions within an episode.
 
 ## Results
+![Reward Mean](images/reward_mean.PNG)
